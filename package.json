@@ -1,8 +1,10 @@
 {
-  "name": "react-chakra",
-  "version": "0.0.0",
+  "name": "vite-react-chakra",
+  "version": "1.0.0",
   "private": true,
   "author": "legitbeep",
+  "description" : "A quick starter template for react with chakra ui and typescript using vite, with all the lints.",
+  "main" : "src/index.tsx",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -52,5 +54,13 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/legitbeep/reactstarter-chakra"
+  },
+  "bugs" : {
+    "type" : "git",
+    "url" : "https://github.com/legitbeep/reactstarter-chakra/issues"
   }
 }
