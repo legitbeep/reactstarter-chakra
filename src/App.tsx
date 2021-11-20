@@ -1,25 +1,33 @@
-import { useState, lazy } from "react";
+import { useState, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// import Layout from "components/layout";
-// import PrivateRoute from "components/route/PrivateRoute";
-import NotFound from "components/404";
+// import PrivateRoute from "components/routes/PrivateRoute";
+// import NotFound from "components/404";
+
+import Layout from "components/layout";
+const PrivateRoute = lazy(() => import("components/routes/PrivateRoute"));
+const NotFound = lazy(() => import("components/404"));
 
 import { privateRoutes, routes } from "routes";
 
 const App = () => (
   <BrowserRouter>
-    {/* <Layout> */}
-    <Routes>
-      {routes.map((routeProps, index) => (
-        <Route exact {...routeProps} key={index} />
-      ))}
-      {/* {privateRoutes.map((privateRouteProps, index) => (
-          <PrivateRoute {...privateRouteProps} key={`privateRoute-${index}`} />
-        ))} */}
-      <Route element={<NotFound />} />
-    </Routes>
-    {/* </Layout> */}
+    <Layout>
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Routes>
+          {routes.map((routeProps, index) => (
+            <Route exact {...routeProps} key={index} />
+          ))}
+          {privateRoutes.map((privateRouteProps, index) => (
+            <PrivateRoute
+              {...privateRouteProps}
+              key={`privateRoute-${index}`}
+            />
+          ))}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </Layout>
   </BrowserRouter>
 );
 
