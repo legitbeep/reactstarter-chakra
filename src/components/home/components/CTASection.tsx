@@ -10,7 +10,11 @@ const CTASection = () => (
       <Button leftIcon={<AiFillGithub />}>Open in Github</Button>
     </Link>
     <Flex marginY={4} justifyContent="center" gridGap={2}>
-      <Link aria-label="Deploy to vercel" isExternal href="https://google.com">
+      <Link
+        aria-label="Deploy to vercel"
+        isExternal
+        href="https://vercel.com/import/git?s=https://github.com/legitbeep/reactstarter-chakra"
+      >
         <Image src="https://vercel.com/button" alt="vercel deploy button" />
       </Link>
     </Flex>
