@@ -13,6 +13,7 @@ export default defineConfig({
       components: resolve(__dirname,"src/components"),
       styles: resolve(__dirname, "src/styles"),
       routes: resolve(__dirname, "src/routes"),
+      assets: resolve(__dirname, "public/assets"),
     }
   }
 })
