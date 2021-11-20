@@ -16,7 +16,7 @@ const App = () => (
       <Suspense fallback={<h2>Loading...</h2>}>
         <Routes>
           {routes.map((routeProps, index) => (
-            <Route exact {...routeProps} key={index} />
+            <Route {...routeProps} key={index} />
           ))}
           {privateRoutes.map((privateRouteProps, index) => (
             <PrivateRoute
