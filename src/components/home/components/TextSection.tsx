@@ -7,7 +7,8 @@ const TextSection = () => (
       Hello <Icon as={CgSmileMouthOpen} />
     </Heading>
     <Text>
-      This is a react template with Chakra UI and typescrip using Vite, starter.
+      This is a react template with Chakra UI and typescript using Vite
+      template.
     </Text>
   </Box>
 );
