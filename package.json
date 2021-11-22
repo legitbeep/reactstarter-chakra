@@ -56,5 +56,10 @@
   "bugs": {
     "type": "git",
     "url": "https://github.com/legitbeep/reactstarter-chakra/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
